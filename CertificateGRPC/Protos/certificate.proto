@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "CertificateGRPCService";
+
+package certificate;
+
+
+service Certificate {
+  rpc AddCertificate (CertificateRequest) returns (CertificateReply);
+}
+
+message CertificateRequest {
+	int Cost = 1;
+	string BuyerName = 2;
+	string BuyerNumber = 3;
+	string RecipientName = 4;
+	string RecipientNumber = 5;
+}
+
+message CertificateReply {
+	int Id = 1;
+  	int Cost = 2;
+	string BuyerName = 3;
+	string BuyerNumber = 4;
+	string RecipientName = 5;
+	string RecipientNumber = 6;
+}
